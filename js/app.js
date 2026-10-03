@@ -96,5 +96,19 @@ boot();
 
 // Mode hors ligne : le « service worker » garde une copie de l'application
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(err => console.warn('Hors ligne indisponible', err)));
+  addEventListener('load', async () => {
+    const sw = navigator.serviceWorker;
+    // Une nouvelle version vient de s'installer : on recharge dès que l'utilisateur n'est pas en pleine saisie
+    if (sw.controller) sw.addEventListener('controllerchange', reloadWhenIdle, { once: true });
+    try {
+      const reg = await sw.register('sw.js');
+      // Au retour dans l'app (iPhone), on regarde s'il existe une mise à jour
+      document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => {}); });
+    } catch (err) { console.warn('Hors ligne indisponible', err); }
+  });
+}
+function reloadWhenIdle() {
+  const busy = () => sheetOpen() || current() === 'recipe';
+  if (!busy()) return location.reload();
+  const t = setInterval(() => { if (!busy()) { clearInterval(t); location.reload(); } }, 1000);
 }

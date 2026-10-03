@@ -65,8 +65,8 @@ avis médical.
 ## Mettre à jour la version en ligne
 
 Après une modification, augmentez le numéro `VERSION` en haut de `sw.js`
-(par exemple `pgl-v4`), puis publiez avec GitHub Desktop (« Commit » puis « Push origin »).
-Sur le téléphone, la nouvelle version s'affiche à la deuxième ouverture de l'app.
+(par exemple `pgl-v5`), puis publiez avec GitHub Desktop (« Commit » puis « Push origin »).
+Sur le téléphone, l'app se met à jour toute seule quelques secondes après son ouverture.
 
 ## Installer sur iPhone
 

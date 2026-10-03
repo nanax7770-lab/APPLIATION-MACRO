@@ -1,6 +1,6 @@
 // « Service worker » : garde une copie de l'application pour qu'elle marche hors ligne.
 // Changez VERSION à chaque mise à jour pour forcer le téléchargement des nouveaux fichiers.
-const VERSION = 'pgl-v3';
+const VERSION = 'pgl-v4';
 
 const CORE = [
   './', 'index.html', 'manifest.json', 'css/style.css',
@@ -13,10 +13,12 @@ const CORE = [
 self.addEventListener('install', e => {
   e.waitUntil((async () => {
     const cache = await caches.open(VERSION);
-    await cache.addAll(CORE);
+    // « reload » : on télécharge toujours les fichiers à neuf, jamais une vieille copie du navigateur
+    const fresh = urls => cache.addAll(urls.map(u => new Request(u, { cache: 'reload' })));
+    await fresh(CORE);
     // On ajoute aussi tous les fichiers d'aliments listés dans index.json
     const index = await (await fetch('data/aliments/index.json', { cache: 'no-store' })).json();
-    await cache.addAll(index.categories.map(f => 'data/aliments/' + f));
+    await fresh(index.categories.map(f => 'data/aliments/' + f));
     await self.skipWaiting();
   })());
 });
@@ -35,7 +37,7 @@ self.addEventListener('fetch', e => {
   e.respondWith((async () => {
     const cache = await caches.open(VERSION);
     const cached = await cache.match(req, { ignoreSearch: true });
-    const network = fetch(req).then(res => {
+    const network = fetch(req, { cache: 'no-cache' }).then(res => {
       if (res && res.ok) cache.put(req, res.clone());
       return res;
     }).catch(() => null);
