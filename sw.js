@@ -1,6 +1,6 @@
 // « Service worker » : garde une copie de l'application pour qu'elle marche hors ligne.
 // Changez VERSION à chaque mise à jour pour forcer le téléchargement des nouveaux fichiers.
-const VERSION = 'pgl-v2';
+const VERSION = 'pgl-v3';
 
 const CORE = [
   './', 'index.html', 'manifest.json', 'css/style.css',

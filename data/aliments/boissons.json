@@ -3,6 +3,7 @@
   "nom": "Boissons",
   "icone": "cup",
   "couleur": "cyan",
+  "ml": 1,
   "aliments": [
     {"id": "eau", "nom": "Eau", "kcal": 0, "prot": 0, "gluc": 0, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 verre", "g": 200}, {"nom": "1 bouteille", "g": 500}]},
     {"id": "cafe-noir", "nom": "Café noir", "kcal": 2, "prot": 0.2, "gluc": 0.3, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 expresso", "g": 40}, {"nom": "1 tasse", "g": 150}]},
@@ -16,9 +17,12 @@
     {"id": "boisson-isotonique-sport", "nom": "Boisson isotonique (sport)", "kcal": 24, "prot": 0, "gluc": 6, "sucres": 6, "lip": 0, "ags": 0, "fibres": 0, "sel": 0.12, "portions": [{"nom": "1 bouteille", "g": 500}]},
     {"id": "eau-de-coco", "nom": "Eau de coco", "kcal": 19, "prot": 0.2, "gluc": 4.5, "sucres": 4, "lip": 0, "ags": 0, "fibres": 0, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 250}]},
     {"id": "lait-chocolate", "nom": "Lait chocolaté", "kcal": 68, "prot": 3.3, "gluc": 10, "sucres": 9.5, "lip": 1.5, "ags": 1, "fibres": 0.5, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 250}]},
-    {"id": "boisson-au-soja-nature", "nom": "Boisson au soja nature", "kcal": 33, "prot": 3.3, "gluc": 0.5, "sucres": 0.3, "lip": 1.9, "ags": 0.3, "fibres": 0.5, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}]},
-    {"id": "boisson-a-l-avoine", "nom": "Boisson à l’avoine", "kcal": 45, "prot": 1, "gluc": 6.5, "sucres": 4, "lip": 1.5, "ags": 0.2, "fibres": 0.8, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}]},
-    {"id": "boisson-a-l-amande-non-sucree", "nom": "Boisson à l’amande non sucrée", "kcal": 14, "prot": 0.5, "gluc": 0.3, "sucres": 0.1, "lip": 1.1, "ags": 0.1, "fibres": 0.3, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}]},
+    {"id": "boisson-au-soja-nature", "nom": "Lait de soja nature", "kcal": 33, "prot": 3.3, "gluc": 0.5, "sucres": 0.3, "lip": 1.9, "ags": 0.3, "fibres": 0.5, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}], "alias": "boisson au soja, lait végétal"},
+    {"id": "boisson-a-l-avoine", "nom": "Lait d’avoine", "kcal": 45, "prot": 1, "gluc": 6.5, "sucres": 4, "lip": 1.5, "ags": 0.2, "fibres": 0.8, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}], "alias": "boisson à l’avoine, lait végétal"},
+    {"id": "lait-de-riz", "nom": "Lait de riz", "kcal": 47, "prot": 0.1, "gluc": 9.5, "sucres": 4, "lip": 1, "ags": 0.1, "fibres": 0.1, "sel": 0.1, "alias": "boisson au riz, lait végétal", "portions": [{"nom": "1 verre", "g": 200}]},
+    {"id": "lait-de-coco-boisson", "nom": "Lait de coco (boisson)", "kcal": 20, "prot": 0.2, "gluc": 2.7, "sucres": 2.5, "lip": 1, "ags": 0.9, "fibres": 0.1, "sel": 0.1, "alias": "boisson à la noix de coco, lait végétal", "portions": [{"nom": "1 verre", "g": 200}]},
+    {"id": "boisson-a-l-amande-non-sucree", "nom": "Lait d’amande non sucré", "kcal": 14, "prot": 0.5, "gluc": 0.3, "sucres": 0.1, "lip": 1.1, "ags": 0.1, "fibres": 0.3, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}], "alias": "boisson à l’amande, lait végétal"},
+    {"id": "lait-d-amande-sucre", "nom": "Lait d’amande sucré", "kcal": 24, "prot": 0.5, "gluc": 3, "sucres": 3, "lip": 1.1, "ags": 0.1, "fibres": 0.3, "sel": 0.1, "alias": "boisson à l’amande, lait végétal", "portions": [{"nom": "1 verre", "g": 200}]},
     {"id": "biere-blonde-5", "nom": "Bière blonde (5 %)", "kcal": 42, "prot": 0.4, "gluc": 3, "sucres": 0.2, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 demi", "g": 250}, {"nom": "1 canette", "g": 330}]},
     {"id": "vin-rouge", "nom": "Vin rouge", "kcal": 70, "prot": 0.1, "gluc": 0.3, "sucres": 0.2, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 verre", "g": 125}]}
   ]

@@ -27,6 +27,8 @@ Toutes les valeurs sont **pour 100 g** :
 | `fibres` | Fibres (g) |
 | `sel` | Sel (g) |
 | `portions` | Facultatif : les portions proposées, avec leur poids en grammes |
+| `ml` | Facultatif : pour un liquide, le poids d'1 ml en grammes (1 pour l'eau, 1.03 pour le lait, 0.92 pour l'huile). L'app propose alors aussi la quantité en millilitres |
+| `alias` | Facultatif : d'autres noms pour la recherche, séparés par des virgules (ex. `"alias": "boisson à l’amande, lait végétal"`) |
 
 Pour ajouter un aliment : copiez une ligne complète, collez-la juste après une autre, modifiez-la,
 et **n'oubliez pas la virgule** entre deux lignes. Pas de virgule après le dernier aliment de la liste.

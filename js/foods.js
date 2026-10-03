@@ -4,7 +4,7 @@ import { state, save } from './store.js';
 import { cats, foods, catById, foodByRef, persoFoods, recipeFoods, search, refreshUser, PERSO, RECETTE } from './data.js';
 import { NUTR, LABELS, recipeInfo, energy, eUnit, fmtE } from './nutrition.js';
 import { actions, enter, push, pop, openSheet, closeSheet, confirmSheet, stepperRow, stepHandlers, refresh, current } from './ui.js';
-import { foodRow, qtyLabel, openAdd, openQty } from './journal.js';
+import { foodRow, qtyLabel, openAdd, openQty, foodFromItem } from './journal.js';
 
 const list = (rows, cls = 'icons') => `<div class="list ${cls}">${rows.join('')}</div>`;
 const actionRow = (action, label, icon = 'plus') =>
@@ -79,6 +79,9 @@ export function openFoodForm(opts = {}) {
       <p class="list-header">Portion (facultatif)</p>
       <div class="list"><label class="row"><input class="field-text" name="pnom" placeholder="Nom (ex. : 1 tranche)" value="${esc(p?.nom || '')}"></label>
         <label class="row field-num"><span class="rt"><span>Poids de la portion</span></span><input class="num" name="pg" type="text" inputmode="decimal" placeholder="0" value="${p ? fmt(p.g, 1) : ''}"><span class="unit">g</span></label></div>
+      <p class="list-header">Liquide</p>
+      <div class="list"><div class="row"><span class="rt"><span>Mesurer aussi en ml</span></span><label class="switch"><input type="checkbox" name="liquide" ${old?.ml ? 'checked' : ''}><span></span></label></div></div>
+      <p class="list-footer">Pour une boisson ou une sauce : vous pourrez saisir la quantité en millilitres (1 ml compté comme 1 g).</p>
       <p class="form-error" id="form-error" hidden></p>
       ${old ? `<div class="sheet-actions"><button class="btn danger" type="button" data-action="food-delete">Supprimer l’aliment</button></div>` : ''}
     </form>`
@@ -105,6 +108,7 @@ actions['food-save'] = () => {
   if (a.prot + a.gluc + a.lip + a.fibres + a.sel > 100.5) return err('Le total dépasse 100 g : vérifiez que les valeurs sont bien pour 100 g.');
   const pg = parseNum(val('pg'));
   a.portions = val('pnom') && pg > 0 ? [{ nom: val('pnom'), g: pg }] : [];
+  if (form.elements.liquide.checked) a.ml = formCtx.old?.ml || 1;
   const i = state.perso.findIndex(x => x.id === a.id);
   if (i >= 0) state.perso[i] = a; else state.perso.push(a);
   const ref = `${PERSO}/${a.id}`, cb = formCtx.onSaved;
@@ -225,8 +229,7 @@ actions['ing-add'] = () => openAdd({
 actions['ing-edit'] = el => {
   const i = Number(el.dataset.i), it = draft.ingredients[i];
   const live = foodByRef(it.ref);
-  const food = { ref: it.ref, nom: it.nom, n: it.n, kind: live?.kind || 'base', cat: live?.cat || '', portions: live?.portions || [] };
-  if (it.u !== 'g' && !food.portions.some(p => p.nom === it.u)) food.portions = [...food.portions, { nom: it.u, g: it.g / (it.q || 1) }];
+  const food = foodFromItem(it, live);
   openQty({
     food, mode: 'ingredient-edit', q: it.q, u: it.u,
     onSave: item => { draft.ingredients[i] = item; closeSheet(true); renderRecipe(); },

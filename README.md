@@ -28,7 +28,7 @@ L'application doit être ouverte via un petit serveur local (un simple double-cl
 | Onglet | Contenu |
 |---|---|
 | **Aujourd’hui** | Anneaux calories / protéines / glucides / lipides, repas du jour, navigation entre les jours |
-| **Aliments** | Recherche, 12 catégories (335 aliments), favoris, mes aliments, mes recettes |
+| **Aliments** | Recherche, 12 catégories (342 aliments), favoris, mes aliments, mes recettes |
 | **Progrès** | Poids, calories par jour, macros moyennes, jours dans l’objectif, séries (7 jours, 30 jours, 3 mois) |
 | **Profil** | Profil, besoins (Mifflin-St Jeor), objectifs de macros, réglages, sauvegarde |
 
@@ -65,7 +65,7 @@ avis médical.
 ## Mettre à jour la version en ligne
 
 Après une modification, augmentez le numéro `VERSION` en haut de `sw.js`
-(par exemple `pgl-v3`), puis publiez avec GitHub Desktop (« Commit » puis « Push origin »).
+(par exemple `pgl-v4`), puis publiez avec GitHub Desktop (« Commit » puis « Push origin »).
 Sur le téléphone, la nouvelle version s'affiche à la deuxième ouverture de l'app.
 
 ## Installer sur iPhone

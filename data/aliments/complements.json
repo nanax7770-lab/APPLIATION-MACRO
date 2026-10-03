@@ -12,7 +12,7 @@
     {"id": "creatine-monohydrate", "nom": "Créatine monohydrate", "kcal": 0, "prot": 0, "gluc": 0, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 dose", "g": 5}]},
     {"id": "gainer-prise-de-masse", "nom": "Gainer (prise de masse)", "kcal": 400, "prot": 20, "gluc": 70, "sucres": 15, "lip": 4, "ags": 2, "fibres": 2, "sel": 0.4, "portions": [{"nom": "1 dose", "g": 100}]},
     {"id": "barre-proteinee", "nom": "Barre protéinée", "kcal": 385, "prot": 33, "gluc": 30, "sucres": 3, "lip": 13, "ags": 6, "fibres": 8, "sel": 0.5, "portions": [{"nom": "1 barre", "g": 60}]},
-    {"id": "boisson-proteinee-prete-a-boire", "nom": "Boisson protéinée prête à boire", "kcal": 61, "prot": 10, "gluc": 4, "sucres": 4, "lip": 0.5, "ags": 0.3, "fibres": 0, "sel": 0.2, "portions": [{"nom": "1 bouteille", "g": 330}]},
+    {"id": "boisson-proteinee-prete-a-boire", "nom": "Boisson protéinée prête à boire", "kcal": 61, "prot": 10, "gluc": 4, "sucres": 4, "lip": 0.5, "ags": 0.3, "fibres": 0, "sel": 0.2, "portions": [{"nom": "1 bouteille", "g": 330}], "ml": 1.03},
     {"id": "maltodextrine", "nom": "Maltodextrine", "kcal": 380, "prot": 0, "gluc": 95, "sucres": 6, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 dose", "g": 50}]},
     {"id": "gel-energetique", "nom": "Gel énergétique", "kcal": 280, "prot": 0, "gluc": 70, "sucres": 25, "lip": 0, "ags": 0, "fibres": 0, "sel": 0.3, "portions": [{"nom": "1 gel", "g": 40}]},
     {"id": "preparation-pancakes-proteines", "nom": "Préparation pancakes protéinés", "kcal": 355, "prot": 40, "gluc": 35, "sucres": 5, "lip": 5, "ags": 1.5, "fibres": 5, "sel": 1, "portions": [{"nom": "1 portion", "g": 50}]},

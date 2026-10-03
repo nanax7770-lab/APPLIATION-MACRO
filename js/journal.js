@@ -28,6 +28,7 @@ export function foodRow(f, action = 'pick') {
 // « 150 g » ou « 2 × tranche · 50 g »
 export function qtyLabel(it) {
   if (it.u === 'g' || !it.u) return `${fmtG(it.g)} g`;
+  if (it.u === 'ml') return `${fmt(it.q)} ml`;
   const name = Number(it.q) === 1 ? it.u : `${fmt(it.q, 2)} × ${it.u.replace(/^1 /, '')}`;
   return `${name} · ${fmt(it.g)} g`;
 }
@@ -224,9 +225,21 @@ function openQtyFor(ref, fromAdd) {
 }
 
 /* ---------- Feuille de quantité ---------- */
+// Aliment reconstitué à partir d'une ligne enregistrée (journal ou recette) : on garde ses valeurs
+export function foodFromItem(it, live) {
+  const food = { ref: it.ref, nom: it.nom, n: it.n, kind: live?.kind || 'base', cat: live?.cat || '', portions: live?.portions || [], ml: live?.ml || null };
+  if (it.u === 'ml' && !food.ml) food.ml = it.g / (it.q || 1);
+  if (!isMeasure(it.u) && !food.portions.some(p => p.nom === it.u)) food.portions = [...food.portions, { nom: it.u, g: it.g / (it.q || 1) }];
+  return food;
+}
 let qty = null;
-const unitsOf = f => [{ nom: 'g', label: 'Grammes', g: 1 }, ...f.portions.map(p => ({ nom: p.nom, label: p.nom, g: p.g }))];
-const gramsOf = (f, q, u) => u === 'g' ? q : q * (f.portions.find(p => p.nom === u)?.g || 0);
+// Unités : grammes, millilitres (pour les liquides) et portions de l'aliment
+const isMeasure = u => u === 'g' || u === 'ml';
+const unitsOf = f => [{ nom: 'g', label: 'Grammes', g: 1 }, ...(f.ml ? [{ nom: 'ml', label: 'Millilitres', g: f.ml }] : []),
+  ...f.portions.map(p => ({ nom: p.nom, label: p.nom, g: p.g }))];
+// Poids en grammes d'une unité (1 ml de lait pèse 1,03 g, 1 ml d'huile 0,92 g…)
+const unitG = (f, u) => u === 'g' ? 1 : u === 'ml' ? (f.ml || 1) : (f.portions.find(p => p.nom === u)?.g || 0);
+const gramsOf = (f, q, u) => q * unitG(f, u);
 
 // opts : { food, mode, q, u, day, meal, entryId, back, onSave, onDelete }
 export function openQty(opts) {
@@ -234,7 +247,7 @@ export function openQty(opts) {
   let { q, u } = opts;
   if (q == null) {
     const last = state.lastQ[f.ref];
-    if (last && (last.u === 'g' || f.portions.some(p => p.nom === last.u))) ({ q, u } = last);
+    if (last && (last.u === 'g' || (last.u === 'ml' && f.ml) || f.portions.some(p => p.nom === last.u))) ({ q, u } = last);
     else if (f.portions.length) { q = 1; u = f.portions[0].nom; }
     else { q = 100; u = 'g'; }
   }
@@ -279,7 +292,7 @@ function renderQty() {
         <span class="u" id="qty-u"></span>
         <div class="stepper"><button data-action="qty-step" data-d="-1" aria-label="Moins">${ic('minus')}</button><button data-action="qty-step" data-d="1" aria-label="Plus">${ic('plus')}</button></div>
       </div></div>
-      <div class="chips" style="margin-top:12px">${unitsOf(f).map(u => `<button class="uchip${u.nom === qty.u ? ' on' : ''}" data-action="qty-unit" data-u="${esc(u.nom)}">${esc(u.label)}${u.nom === 'g' ? '' : ` <small>${fmt(u.g)} g</small>`}</button>`).join('')}</div>
+      <div class="chips" style="margin-top:12px">${unitsOf(f).map(u => `<button class="uchip${u.nom === qty.u ? ' on' : ''}" data-action="qty-unit" data-u="${esc(u.nom)}">${esc(u.label)}${isMeasure(u.nom) ? '' : ` <small>${fmt(u.g)} g</small>`}</button>`).join('')}</div>
       ${inJournal ? `<p class="list-header" style="margin-top:8px">Repas <span class="nc">· ${esc(dayLabel(qty.day))}</span></p>
       <div class="list"><div class="row"><span class="rt"><span>Repas</span></span><span class="pick"><span id="qty-meal-l">${esc(mealById(qty.meal).nom)}</span>${ic('updown')}
         <select id="qty-meal" aria-label="Repas">${MEALS.map(m => `<option value="${m.id}" ${m.id === qty.meal ? 'selected' : ''}>${m.nom}</option>`).join('')}</select></span></div></div>` : ''}
@@ -301,8 +314,10 @@ function updateQty() {
   const g = gramsOf(f, qty.q, qty.u), n = scale(f.n, g);
   $('#qn-kcal').textContent = fmt(energy(n.kcal));
   for (const k of ['prot', 'gluc', 'lip']) $(`#qn-${k}`).textContent = fmtG(n[k]);
-  $('#qty-u').textContent = qty.u === 'g' ? 'g' : `× ${qty.u.replace(/^1 /, '')} · ${fmt(g)} g`;
-  $('#nt-q').textContent = `${fmt(g)} g`;
+  $('#qty-u').textContent = qty.u === 'g' ? 'g'
+    : qty.u === 'ml' ? (f.ml === 1 ? 'ml' : `ml · ${fmt(g)} g`)
+    : `× ${qty.u.replace(/^1 /, '')} · ${fmt(g)} g`;
+  $('#nt-q').textContent = qty.u === 'ml' ? `${fmt(qty.q)} ml` : `${fmt(g)} g`;
   for (const k of NUTR) $(`#nt-${k}`).textContent = k === 'kcal' ? fmt(energy(n.kcal)) : fmt(n[k], 1);
   const save = $('#qty-save');
   if (save && qty.mode === 'add') save.textContent = `Ajouter · ${fmtE(n.kcal)}`;
@@ -316,15 +331,15 @@ actions['qty-unit'] = el => {
   // On garde la même quantité en grammes quand c'est possible
   const g = gramsOf(f, qty.q, qty.u);
   qty.u = u;
-  const per = u === 'g' ? 1 : f.portions.find(p => p.nom === u).g;
-  qty.q = u === 'g' ? Math.round(g || 100) : 1;
-  if (u !== 'g' && g > 0 && Math.abs(g / per - Math.round(g / per)) < 0.01 && Math.round(g / per) >= 1) qty.q = Math.round(g / per);
+  const per = unitG(f, u);
+  qty.q = isMeasure(u) ? Math.round(g / per || 100) : 1;
+  if (!isMeasure(u) && g > 0 && Math.abs(g / per - Math.round(g / per)) < 0.01 && Math.round(g / per) >= 1) qty.q = Math.round(g / per);
   $('#qty-q').value = fmt(qty.q, 2);
   document.querySelectorAll('.uchip').forEach(b => b.classList.toggle('on', b.dataset.u === u));
   updateQty();
 };
 actions['qty-step'] = el => {
-  const d = Number(el.dataset.d), step = qty.u === 'g' ? (qty.q >= 100 ? 10 : 5) : (qty.q < 1 || (qty.q === 1 && d < 0) ? 0.25 : 1);
+  const d = Number(el.dataset.d), step = isMeasure(qty.u) ? (qty.q >= 100 ? 10 : 5) : (qty.q < 1 || (qty.q === 1 && d < 0) ? 0.25 : 1);
   qty.q = Math.max(0, Math.round((qty.q + d * step) * 100) / 100);
   $('#qty-q').value = fmt(qty.q, 2);
   updateQty();
@@ -384,8 +399,7 @@ actions['edit-entry'] = el => {
   if (!e) return;
   // On garde les valeurs enregistrées : l'aliment d'origine a pu être modifié ou supprimé depuis
   const live = foodByRef(e.ref);
-  const food = { ref: e.ref, nom: e.nom, n: e.n, kind: live?.kind || 'base', cat: live?.cat || '', portions: live?.portions || [] };
-  if (e.u !== 'g' && !food.portions.some(p => p.nom === e.u)) food.portions = [...food.portions, { nom: e.u, g: e.g / (e.q || 1) }];
+  const food = foodFromItem(e, live);
   add = null;
   openQty({ food, mode: 'edit', q: e.q, u: e.u, day: viewDay, meal, fromMeal: meal, entryId: e.id });
 };

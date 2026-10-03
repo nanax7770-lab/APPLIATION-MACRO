@@ -20,15 +20,18 @@ export async function loadData() {
 }
 
 const nutrOf = a => Object.fromEntries(NUTR.map(k => [k, Number(a[k]) || 0]));
+// Texte cherché : le nom et ses synonymes (« alias »), par exemple « lait d'amande » / « boisson à l'amande »
+const keyOf = a => fold(a.alias ? `${a.nom} | ${a.alias}` : a.nom);
 const portionsOf = a => (Array.isArray(a.portions) ? a.portions : []).filter(p => p && p.nom && p.g > 0);
 
 function addCat(c) {
   const cat = { id: c.id, nom: c.nom, icone: c.icone || 'utensils', couleur: c.couleur || 'gray', foods: [] };
+  // « ml » : poids d'un millilitre en grammes ; présent = l'aliment se mesure aussi en ml
   for (const a of c.aliments || []) {
     if (!a.id || !a.nom) continue;
     const ref = `${c.id}/${a.id}`;
     if (foods.has(ref)) continue;
-    const food = { ref, cat: c.id, kind: 'base', nom: a.nom, n: nutrOf(a), portions: portionsOf(a), key: fold(a.nom) };
+    const food = { ref, cat: c.id, kind: 'base', nom: a.nom, n: nutrOf(a), portions: portionsOf(a), ml: a.ml || c.ml || null, key: keyOf(a) };
     foods.set(ref, food);
     cat.foods.push(food);
   }
@@ -40,7 +43,7 @@ export function refreshUser() {
   for (const [ref, f] of foods) if (f.kind !== 'base') foods.delete(ref);
   for (const a of state.perso) {
     const ref = `${PERSO}/${a.id}`;
-    foods.set(ref, { ref, cat: PERSO, kind: 'perso', id: a.id, nom: a.nom, n: nutrOf(a), portions: portionsOf(a), key: fold(a.nom) });
+    foods.set(ref, { ref, cat: PERSO, kind: 'perso', id: a.id, nom: a.nom, n: nutrOf(a), portions: portionsOf(a), ml: a.ml || null, key: fold(a.nom) });
   }
   for (const r of state.recettes) {
     const ref = `${RECETTE}/${r.id}`, info = recipeInfo(r);

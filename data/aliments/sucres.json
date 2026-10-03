@@ -6,7 +6,7 @@
   "aliments": [
     {"id": "sucre-blanc", "nom": "Sucre blanc", "kcal": 400, "prot": 0, "gluc": 100, "sucres": 100, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 morceau", "g": 5}, {"nom": "1 c. à café", "g": 5}]},
     {"id": "miel", "nom": "Miel", "kcal": 326, "prot": 0.4, "gluc": 81, "sucres": 81, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 c. à café", "g": 7}, {"nom": "1 c. à soupe", "g": 20}]},
-    {"id": "sirop-d-erable", "nom": "Sirop d’érable", "kcal": 268, "prot": 0, "gluc": 67, "sucres": 60, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 c. à soupe", "g": 20}]},
+    {"id": "sirop-d-erable", "nom": "Sirop d’érable", "kcal": 268, "prot": 0, "gluc": 67, "sucres": 60, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 c. à soupe", "g": 20}], "ml": 1.32},
     {"id": "confiture", "nom": "Confiture", "kcal": 244, "prot": 0.4, "gluc": 60, "sucres": 55, "lip": 0, "ags": 0, "fibres": 1, "sel": 0, "portions": [{"nom": "1 c. à café", "g": 10}, {"nom": "1 c. à soupe", "g": 20}]},
     {"id": "pate-a-tartiner-chocolat-noisette", "nom": "Pâte à tartiner chocolat-noisette", "kcal": 537, "prot": 6, "gluc": 57, "sucres": 56, "lip": 31, "ags": 10.6, "fibres": 3, "sel": 0.1, "portions": [{"nom": "1 c. à café", "g": 7}, {"nom": "1 c. à soupe", "g": 15}]},
     {"id": "chocolat-noir-70", "nom": "Chocolat noir 70 %", "kcal": 568, "prot": 9, "gluc": 33, "sucres": 28, "lip": 42, "ags": 25, "fibres": 11, "sel": 0, "portions": [{"nom": "1 carré", "g": 5}]},
@@ -29,13 +29,15 @@
     {"id": "moutarde", "nom": "Moutarde", "kcal": 140, "prot": 7, "gluc": 2, "sucres": 1.5, "lip": 11, "ags": 0.6, "fibres": 2.5, "sel": 5.7, "portions": [{"nom": "1 c. à café", "g": 5}]},
     {"id": "mayonnaise", "nom": "Mayonnaise", "kcal": 695, "prot": 1.3, "gluc": 1.5, "sucres": 1, "lip": 76, "ags": 6, "fibres": 0, "sel": 1.4, "portions": [{"nom": "1 c. à soupe", "g": 15}]},
     {"id": "mayonnaise-allegee", "nom": "Mayonnaise allégée", "kcal": 302, "prot": 1, "gluc": 7, "sucres": 4, "lip": 30, "ags": 2.5, "fibres": 0, "sel": 1.5, "portions": [{"nom": "1 c. à soupe", "g": 15}]},
-    {"id": "vinaigrette", "nom": "Vinaigrette", "kcal": 419, "prot": 0.5, "gluc": 3, "sucres": 2.5, "lip": 45, "ags": 4, "fibres": 0, "sel": 2.5, "portions": [{"nom": "1 c. à soupe", "g": 15}]},
-    {"id": "sauce-soja", "nom": "Sauce soja", "kcal": 58, "prot": 8, "gluc": 6.5, "sucres": 1, "lip": 0, "ags": 0, "fibres": 0, "sel": 14.5, "portions": [{"nom": "1 c. à soupe", "g": 15}]},
+    {"id": "vinaigrette", "nom": "Vinaigrette", "kcal": 419, "prot": 0.5, "gluc": 3, "sucres": 2.5, "lip": 45, "ags": 4, "fibres": 0, "sel": 2.5, "portions": [{"nom": "1 c. à soupe", "g": 15}], "ml": 0.95},
+    {"id": "sauce-soja", "nom": "Sauce soja", "kcal": 58, "prot": 8, "gluc": 6.5, "sucres": 1, "lip": 0, "ags": 0, "fibres": 0, "sel": 14.5, "portions": [{"nom": "1 c. à soupe", "g": 15}], "ml": 1.15},
     {"id": "sauce-tomate-coulis", "nom": "Sauce tomate (coulis)", "kcal": 38, "prot": 1.5, "gluc": 6, "sucres": 5, "lip": 0.5, "ags": 0.1, "fibres": 1.5, "sel": 0.7, "portions": [{"nom": "1 portion", "g": 100}]},
     {"id": "concentre-de-tomate", "nom": "Concentré de tomate", "kcal": 94, "prot": 4.3, "gluc": 16, "sucres": 12, "lip": 0.5, "ags": 0.1, "fibres": 4, "sel": 0.2, "portions": [{"nom": "1 c. à soupe", "g": 16}]},
     {"id": "pesto-vert", "nom": "Pesto vert", "kcal": 445, "prot": 5, "gluc": 4, "sucres": 2, "lip": 45, "ags": 7, "fibres": 2, "sel": 2.5, "portions": [{"nom": "1 c. à soupe", "g": 15}]},
     {"id": "sauce-barbecue", "nom": "Sauce barbecue", "kcal": 169, "prot": 1, "gluc": 40, "sucres": 33, "lip": 0.5, "ags": 0.1, "fibres": 0.5, "sel": 2, "portions": [{"nom": "1 c. à soupe", "g": 17}]},
-    {"id": "vinaigre-balsamique", "nom": "Vinaigre balsamique", "kcal": 78, "prot": 0.5, "gluc": 19, "sucres": 15, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 c. à soupe", "g": 15}]},
-    {"id": "sel", "nom": "Sel", "kcal": 0, "prot": 0, "gluc": 0, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 100, "portions": [{"nom": "1 pincée", "g": 0.5}, {"nom": "1 c. à café", "g": 5}]}
+    {"id": "vinaigre-balsamique", "nom": "Vinaigre balsamique", "kcal": 78, "prot": 0.5, "gluc": 19, "sucres": 15, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 c. à soupe", "g": 15}], "ml": 1.1},
+    {"id": "sel", "nom": "Sel", "kcal": 0, "prot": 0, "gluc": 0, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 100, "portions": [{"nom": "1 pincée", "g": 0.5}, {"nom": "1 c. à café", "g": 5}]},
+    {"id": "bicarbonate-de-soude", "nom": "Bicarbonate de soude", "kcal": 0, "prot": 0, "gluc": 0, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 68.5, "alias": "bicarbonate alimentaire, baking soda", "portions": [{"nom": "1 pincée", "g": 0.5}, {"nom": "1 c. à café", "g": 5}]},
+    {"id": "levure-chimique", "nom": "Levure chimique", "kcal": 105, "prot": 0, "gluc": 26, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0.2, "sel": 26, "alias": "poudre à lever, baking powder", "portions": [{"nom": "1 sachet", "g": 11}, {"nom": "1 c. à café", "g": 4}]}
   ]
 }
