@@ -1,0 +1,17 @@
+{
+  "source": "Valeurs pour 100 g, arrondies, d’après la table Ciqual (ANSES).",
+  "categories": [
+    "viandes.json",
+    "poissons.json",
+    "laitiers.json",
+    "feculents.json",
+    "legumineuses.json",
+    "legumes.json",
+    "fruits.json",
+    "graisses.json",
+    "sucres.json",
+    "boissons.json",
+    "complements.json",
+    "plats.json"
+  ]
+}

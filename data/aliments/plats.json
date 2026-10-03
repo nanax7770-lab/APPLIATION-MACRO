@@ -1,0 +1,29 @@
+{
+  "id": "plats",
+  "nom": "Plats & restauration rapide",
+  "icone": "utensils",
+  "couleur": "gray",
+  "aliments": [
+    {"id": "pizza-margherita", "nom": "Pizza margherita", "kcal": 237, "prot": 10, "gluc": 29, "sucres": 3, "lip": 8.5, "ags": 4, "fibres": 2, "sel": 1.3, "portions": [{"nom": "1 part", "g": 100}, {"nom": "1 pizza", "g": 350}]},
+    {"id": "pizza-4-fromages", "nom": "Pizza 4 fromages", "kcal": 268, "prot": 12, "gluc": 27, "sucres": 2.5, "lip": 12, "ags": 6.5, "fibres": 2, "sel": 1.4, "portions": [{"nom": "1 part", "g": 100}, {"nom": "1 pizza", "g": 350}]},
+    {"id": "cheeseburger", "nom": "Cheeseburger", "kcal": 275, "prot": 14, "gluc": 27, "sucres": 5, "lip": 12, "ags": 5, "fibres": 1.5, "sel": 1.5, "portions": [{"nom": "1 burger", "g": 120}]},
+    {"id": "sandwich-kebab", "nom": "Sandwich kebab", "kcal": 238, "prot": 12, "gluc": 22, "sucres": 3, "lip": 11, "ags": 4, "fibres": 1.5, "sel": 1.4, "portions": [{"nom": "1 sandwich", "g": 350}]},
+    {"id": "sandwich-jambon-beurre", "nom": "Sandwich jambon-beurre", "kcal": 281, "prot": 11, "gluc": 38, "sucres": 2, "lip": 9, "ags": 5, "fibres": 2, "sel": 1.6, "portions": [{"nom": "1 sandwich", "g": 200}]},
+    {"id": "wrap-au-poulet", "nom": "Wrap au poulet", "kcal": 208, "prot": 11, "gluc": 22, "sucres": 2.5, "lip": 8, "ags": 2, "fibres": 2, "sel": 1.1, "portions": [{"nom": "1 wrap", "g": 200}]},
+    {"id": "croque-monsieur", "nom": "Croque-monsieur", "kcal": 272, "prot": 13, "gluc": 25, "sucres": 3, "lip": 13, "ags": 7, "fibres": 1.5, "sel": 1.6, "portions": [{"nom": "1 croque", "g": 150}]},
+    {"id": "quiche-lorraine", "nom": "Quiche lorraine", "kcal": 285, "prot": 10, "gluc": 18, "sucres": 2, "lip": 19, "ags": 9, "fibres": 1, "sel": 1, "portions": [{"nom": "1 part", "g": 150}]},
+    {"id": "lasagnes-a-la-bolognaise", "nom": "Lasagnes à la bolognaise", "kcal": 149, "prot": 8, "gluc": 13, "sucres": 2.5, "lip": 7, "ags": 3.2, "fibres": 1, "sel": 0.8, "portions": [{"nom": "1 portion", "g": 300}]},
+    {"id": "spaghetti-bolognaise", "nom": "Spaghetti bolognaise", "kcal": 139, "prot": 7, "gluc": 18, "sucres": 2.5, "lip": 4, "ags": 1.5, "fibres": 1.5, "sel": 0.6, "portions": [{"nom": "1 assiette", "g": 350}]},
+    {"id": "hachis-parmentier", "nom": "Hachis parmentier", "kcal": 133, "prot": 7, "gluc": 10, "sucres": 1.5, "lip": 7, "ags": 3.5, "fibres": 1, "sel": 0.7, "portions": [{"nom": "1 portion", "g": 300}]},
+    {"id": "couscous-plat-complet", "nom": "Couscous (plat complet)", "kcal": 137, "prot": 7, "gluc": 15, "sucres": 2, "lip": 5, "ags": 1.5, "fibres": 2, "sel": 0.8, "portions": [{"nom": "1 assiette", "g": 400}]},
+    {"id": "chili-con-carne", "nom": "Chili con carne", "kcal": 120, "prot": 8, "gluc": 9, "sucres": 2, "lip": 5, "ags": 2, "fibres": 3.5, "sel": 0.8, "portions": [{"nom": "1 portion", "g": 300}]},
+    {"id": "paella", "nom": "Paëlla", "kcal": 151, "prot": 9, "gluc": 17, "sucres": 1, "lip": 5, "ags": 1.3, "fibres": 1, "sel": 0.8, "portions": [{"nom": "1 portion", "g": 350}]},
+    {"id": "riz-cantonais", "nom": "Riz cantonais", "kcal": 169, "prot": 5.5, "gluc": 25, "sucres": 1, "lip": 5, "ags": 1, "fibres": 1, "sel": 0.9, "portions": [{"nom": "1 portion", "g": 300}]},
+    {"id": "poke-bowl-au-saumon", "nom": "Poke bowl au saumon", "kcal": 173, "prot": 9, "gluc": 20, "sucres": 3, "lip": 6, "ags": 1.2, "fibres": 1.5, "sel": 0.9, "portions": [{"nom": "1 bowl", "g": 400}]},
+    {"id": "sushi-maki-au-saumon", "nom": "Sushi / maki au saumon", "kcal": 164, "prot": 6, "gluc": 28, "sucres": 5, "lip": 3, "ags": 0.7, "fibres": 0.7, "sel": 1, "portions": [{"nom": "1 pièce", "g": 25}]},
+    {"id": "salade-cesar", "nom": "Salade César", "kcal": 161, "prot": 9, "gluc": 6, "sucres": 1.5, "lip": 11, "ags": 2.5, "fibres": 1, "sel": 0.9, "portions": [{"nom": "1 assiette", "g": 300}]},
+    {"id": "taboule", "nom": "Taboulé", "kcal": 175, "prot": 4, "gluc": 25, "sucres": 2, "lip": 6, "ags": 0.8, "fibres": 2.5, "sel": 0.8, "portions": [{"nom": "1 portion", "g": 200}]},
+    {"id": "omelette-nature", "nom": "Omelette nature", "kcal": 154, "prot": 11, "gluc": 0.5, "sucres": 0.5, "lip": 12, "ags": 3.5, "fibres": 0, "sel": 0.6, "portions": [{"nom": "1 omelette (2 œufs)", "g": 120}]},
+    {"id": "gratin-dauphinois", "nom": "Gratin dauphinois", "kcal": 136, "prot": 3.5, "gluc": 12, "sucres": 2, "lip": 8, "ags": 5, "fibres": 1.2, "sel": 0.5, "portions": [{"nom": "1 portion", "g": 200}]}
+  ]
+}

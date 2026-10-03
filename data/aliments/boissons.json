@@ -1,0 +1,25 @@
+{
+  "id": "boissons",
+  "nom": "Boissons",
+  "icone": "cup",
+  "couleur": "cyan",
+  "aliments": [
+    {"id": "eau", "nom": "Eau", "kcal": 0, "prot": 0, "gluc": 0, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 verre", "g": 200}, {"nom": "1 bouteille", "g": 500}]},
+    {"id": "cafe-noir", "nom": "Café noir", "kcal": 2, "prot": 0.2, "gluc": 0.3, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 expresso", "g": 40}, {"nom": "1 tasse", "g": 150}]},
+    {"id": "the-infuse", "nom": "Thé, infusé", "kcal": 1, "prot": 0, "gluc": 0.2, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 tasse", "g": 200}]},
+    {"id": "jus-d-orange-pur-jus", "nom": "Jus d’orange (pur jus)", "kcal": 42, "prot": 0.7, "gluc": 9.5, "sucres": 9, "lip": 0.1, "ags": 0, "fibres": 0.2, "sel": 0, "portions": [{"nom": "1 verre", "g": 200}]},
+    {"id": "jus-de-pomme", "nom": "Jus de pomme", "kcal": 43, "prot": 0.1, "gluc": 10.5, "sucres": 10, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 verre", "g": 200}]},
+    {"id": "smoothie-aux-fruits", "nom": "Smoothie aux fruits", "kcal": 54, "prot": 0.6, "gluc": 12, "sucres": 11, "lip": 0.2, "ags": 0, "fibres": 1, "sel": 0, "portions": [{"nom": "1 bouteille", "g": 250}]},
+    {"id": "soda-au-cola", "nom": "Soda au cola", "kcal": 42, "prot": 0, "gluc": 10.6, "sucres": 10.6, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 canette", "g": 330}]},
+    {"id": "soda-zero-sucre", "nom": "Soda zéro sucre", "kcal": 0.3, "prot": 0, "gluc": 0, "sucres": 0, "lip": 0, "ags": 0, "fibres": 0, "sel": 0.02, "portions": [{"nom": "1 canette", "g": 330}]},
+    {"id": "boisson-energisante", "nom": "Boisson énergisante", "kcal": 45, "prot": 0, "gluc": 11, "sucres": 11, "lip": 0, "ags": 0, "fibres": 0, "sel": 0.2, "portions": [{"nom": "1 canette", "g": 250}]},
+    {"id": "boisson-isotonique-sport", "nom": "Boisson isotonique (sport)", "kcal": 24, "prot": 0, "gluc": 6, "sucres": 6, "lip": 0, "ags": 0, "fibres": 0, "sel": 0.12, "portions": [{"nom": "1 bouteille", "g": 500}]},
+    {"id": "eau-de-coco", "nom": "Eau de coco", "kcal": 19, "prot": 0.2, "gluc": 4.5, "sucres": 4, "lip": 0, "ags": 0, "fibres": 0, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 250}]},
+    {"id": "lait-chocolate", "nom": "Lait chocolaté", "kcal": 68, "prot": 3.3, "gluc": 10, "sucres": 9.5, "lip": 1.5, "ags": 1, "fibres": 0.5, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 250}]},
+    {"id": "boisson-au-soja-nature", "nom": "Boisson au soja nature", "kcal": 33, "prot": 3.3, "gluc": 0.5, "sucres": 0.3, "lip": 1.9, "ags": 0.3, "fibres": 0.5, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}]},
+    {"id": "boisson-a-l-avoine", "nom": "Boisson à l’avoine", "kcal": 45, "prot": 1, "gluc": 6.5, "sucres": 4, "lip": 1.5, "ags": 0.2, "fibres": 0.8, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}]},
+    {"id": "boisson-a-l-amande-non-sucree", "nom": "Boisson à l’amande non sucrée", "kcal": 14, "prot": 0.5, "gluc": 0.3, "sucres": 0.1, "lip": 1.1, "ags": 0.1, "fibres": 0.3, "sel": 0.1, "portions": [{"nom": "1 verre", "g": 200}]},
+    {"id": "biere-blonde-5", "nom": "Bière blonde (5 %)", "kcal": 42, "prot": 0.4, "gluc": 3, "sucres": 0.2, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 demi", "g": 250}, {"nom": "1 canette", "g": 330}]},
+    {"id": "vin-rouge", "nom": "Vin rouge", "kcal": 70, "prot": 0.1, "gluc": 0.3, "sucres": 0.2, "lip": 0, "ags": 0, "fibres": 0, "sel": 0, "portions": [{"nom": "1 verre", "g": 125}]}
+  ]
+}

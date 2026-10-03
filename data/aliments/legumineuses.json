@@ -1,0 +1,26 @@
+{
+  "id": "legumineuses",
+  "nom": "Légumineuses & soja",
+  "icone": "bean",
+  "couleur": "brown",
+  "aliments": [
+    {"id": "lentilles-vertes-crues", "nom": "Lentilles vertes, crues", "kcal": 324, "prot": 24, "gluc": 48, "sucres": 1.5, "lip": 1.5, "ags": 0.2, "fibres": 11, "sel": 0, "portions": [{"nom": "1 portion", "g": 70}]},
+    {"id": "lentilles-cuites", "nom": "Lentilles, cuites", "kcal": 119, "prot": 9, "gluc": 17, "sucres": 0.5, "lip": 0.5, "ags": 0.1, "fibres": 5, "sel": 0, "portions": [{"nom": "1 portion", "g": 200}]},
+    {"id": "lentilles-corail-crues", "nom": "Lentilles corail, crues", "kcal": 336, "prot": 25, "gluc": 50, "sucres": 2, "lip": 2, "ags": 0.3, "fibres": 9, "sel": 0, "portions": [{"nom": "1 portion", "g": 70}]},
+    {"id": "pois-chiches-secs", "nom": "Pois chiches, secs", "kcal": 352, "prot": 20, "gluc": 47, "sucres": 3, "lip": 6, "ags": 0.6, "fibres": 15, "sel": 0},
+    {"id": "pois-chiches-cuits", "nom": "Pois chiches, cuits", "kcal": 136, "prot": 7.5, "gluc": 18, "sucres": 1, "lip": 2.4, "ags": 0.3, "fibres": 6, "sel": 0.3, "portions": [{"nom": "1 portion", "g": 150}]},
+    {"id": "haricots-rouges-cuits", "nom": "Haricots rouges, cuits", "kcal": 111, "prot": 8, "gluc": 15, "sucres": 0.5, "lip": 0.5, "ags": 0.1, "fibres": 7, "sel": 0.3, "portions": [{"nom": "1 portion", "g": 150}]},
+    {"id": "haricots-blancs-cuits", "nom": "Haricots blancs, cuits", "kcal": 105, "prot": 7.5, "gluc": 14, "sucres": 0.5, "lip": 0.6, "ags": 0.1, "fibres": 7, "sel": 0.3, "portions": [{"nom": "1 portion", "g": 150}]},
+    {"id": "haricots-blancs-a-la-sauce-tomate", "nom": "Haricots blancs à la sauce tomate", "kcal": 82, "prot": 4.7, "gluc": 13, "sucres": 5, "lip": 0.3, "ags": 0.1, "fibres": 4, "sel": 0.6, "portions": [{"nom": "1/2 boîte", "g": 210}]},
+    {"id": "pois-casses-cuits", "nom": "Pois cassés, cuits", "kcal": 121, "prot": 8.3, "gluc": 18, "sucres": 1, "lip": 0.4, "ags": 0.1, "fibres": 6, "sel": 0},
+    {"id": "feves-cuites", "nom": "Fèves, cuites", "kcal": 93, "prot": 7.6, "gluc": 12, "sucres": 1.5, "lip": 0.4, "ags": 0.1, "fibres": 5.4, "sel": 0},
+    {"id": "edamame-cuits", "nom": "Edamame, cuits", "kcal": 121, "prot": 11.9, "gluc": 3.7, "sucres": 2, "lip": 5.2, "ags": 0.6, "fibres": 5.2, "sel": 0, "portions": [{"nom": "1 bol", "g": 100}]},
+    {"id": "tofu-nature", "nom": "Tofu nature", "kcal": 128, "prot": 13, "gluc": 1.5, "sucres": 0.5, "lip": 7.5, "ags": 1.1, "fibres": 1, "sel": 0.05, "portions": [{"nom": "1 bloc", "g": 200}]},
+    {"id": "tofu-soyeux", "nom": "Tofu soyeux", "kcal": 52, "prot": 5, "gluc": 2, "sucres": 1, "lip": 2.7, "ags": 0.4, "fibres": 0.3, "sel": 0.02},
+    {"id": "tempeh", "nom": "Tempeh", "kcal": 213, "prot": 19, "gluc": 6.5, "sucres": 0.5, "lip": 11, "ags": 2.2, "fibres": 6, "sel": 0.02},
+    {"id": "steak-vegetal-au-soja", "nom": "Steak végétal au soja", "kcal": 185, "prot": 16, "gluc": 8, "sucres": 2, "lip": 9, "ags": 1.2, "fibres": 4, "sel": 1.1, "portions": [{"nom": "1 steak", "g": 100}]},
+    {"id": "proteines-de-soja-texturees-seches", "nom": "Protéines de soja texturées, sèches", "kcal": 308, "prot": 50, "gluc": 15, "sucres": 7, "lip": 1.5, "ags": 0.2, "fibres": 17, "sel": 0, "portions": [{"nom": "1 portion sèche", "g": 40}]},
+    {"id": "houmous", "nom": "Houmous", "kcal": 266, "prot": 7, "gluc": 12, "sucres": 1, "lip": 20, "ags": 2.5, "fibres": 5, "sel": 1.1, "portions": [{"nom": "1 c. à soupe", "g": 20}]},
+    {"id": "falafels", "nom": "Falafels", "kcal": 277, "prot": 8, "gluc": 25, "sucres": 2, "lip": 15, "ags": 1.8, "fibres": 5, "sel": 1, "portions": [{"nom": "1 falafel", "g": 20}]}
+  ]
+}
