@@ -77,7 +77,7 @@ export function renderProfile() {
     <div class="list icons" style="margin-top:24px">
       <button class="row destructive" data-action="reset"><span class="ri" style="--c:var(--red)">${ic('trash')}</span><span class="rt"><span>Tout réinitialiser</span></span></button>
     </div>
-    <p class="list-footer">MACRO · version 1.0 · Valeurs nutritionnelles d’après la table Ciqual (ANSES). Ces calculs sont des repères et ne remplacent pas l’avis d’un professionnel de santé.</p>`;
+    <p class="list-footer">PGL · version 1.0 · Valeurs nutritionnelles d’après la table Ciqual (ANSES). Ces calculs sont des repères et ne remplacent pas l’avis d’un professionnel de santé.</p>`;
 }
 
 /* ---------- Modifications du profil ---------- */
@@ -126,7 +126,7 @@ actions.export = () => {
   const blob = new Blob([exportData()], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `macro-sauvegarde-${dayKey()}.json`;
+  a.download = `pgl-sauvegarde-${dayKey()}.json`;
   document.body.appendChild(a);
   a.click();
   setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
@@ -145,7 +145,7 @@ export function initImport() {
       text: 'Les données de ce fichier remplaceront celles de cet appareil (journal, pesées, aliments, recettes et profil).',
       onOk: () => {
         try { importData(text); location.reload(); }
-        catch (err) { toast('Ce fichier n’est pas une sauvegarde MACRO'); }
+        catch (err) { toast('Ce fichier n’est pas une sauvegarde PGL'); }
       }
     });
   });

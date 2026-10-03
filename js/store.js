@@ -2,7 +2,7 @@
 // Rien n'est envoyé sur internet.
 import { todayKey } from './util.js';
 
-const KEY = 'macro';
+const KEY = 'macro'; // nom d'origine de l'app, gardé pour ne pas perdre les données
 
 export const DEFAULTS = {
   theme: 'auto',      // auto | light | dark
@@ -107,7 +107,7 @@ export function touchRecent(ref) {
 
 /* ---------- Sauvegarde dans un fichier ---------- */
 export function exportData() {
-  return JSON.stringify({ app: 'MACRO', exported: new Date().toISOString(), ...state });
+  return JSON.stringify({ app: 'PGL', exported: new Date().toISOString(), ...state });
 }
 
 export function importData(text) {

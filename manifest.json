@@ -1,7 +1,7 @@
 {
-  "name": "MACRO",
-  "short_name": "MACRO",
-  "description": "Suivi nutritionnel pour le sport : calories, protéines, glucides et lipides.",
+  "name": "PGL",
+  "short_name": "PGL",
+  "description": "PGL — protéines, glucides, lipides. Suivi nutritionnel pour le sport : calories, protéines, glucides et lipides.",
   "lang": "fr",
   "start_url": "./",
   "scope": "./",

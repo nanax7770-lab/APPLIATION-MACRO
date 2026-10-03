@@ -1,4 +1,6 @@
-# MACRO
+# PGL
+
+**P**rotéines · **G**lucides · **L**ipides.
 
 Application web de suivi nutritionnel pour le sport : on note ce qu'on mange à partir des aliments
 bruts (poulet, riz, farine, œufs, légumes…) et l'app calcule les calories, protéines, glucides et
@@ -63,7 +65,7 @@ avis médical.
 ## Mettre à jour la version en ligne
 
 Après une modification, augmentez le numéro `VERSION` en haut de `sw.js`
-(par exemple `macro-v2`), puis publiez avec GitHub Desktop (« Commit » puis « Push origin »).
+(par exemple `pgl-v3`), puis publiez avec GitHub Desktop (« Commit » puis « Push origin »).
 Sur le téléphone, la nouvelle version s'affiche à la deuxième ouverture de l'app.
 
 ## Installer sur iPhone
